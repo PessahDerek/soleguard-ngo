@@ -8,10 +8,10 @@ interface props {
 }
 
 export default function InvolvedCard({involved, index}: props) {
-    const top = `top-[${index * 100}px] mt-[${index * 100}px]`;
-    console.log(top);
+    const top = (index*40)+"px";
+
     return (
-        <Card className={`flex-1 min-w-min gap-2`} style={{transform: `translateY(${top}px)`}}>
+        <Card className={`flex-1 h-max min-w-min gap-2 ${top}`} >
             <Card.Section>
                 <Image className={"w-full h-[15vh]"} src={involved.image} alt={involved.how}/>
             </Card.Section>
