@@ -37,7 +37,7 @@ export default function IndexLanding() {
             <Image ref={parallax.ref}
                    src={"/pics/ocean3.jpg"} alt={"landing"}
                    fit={'cover'}
-                   className={"w-full h-full object-center filter brightness-[60%] absolute top-0 left-0 "}
+                   className={"w-full h-[110%] object-center filter brightness-[60%] absolute top-0 left-0 "}
                    fetchPriority={"high"}/>
             <div
                 className={"w-[90%] grid h-max min-h-[80%] gap-2  text-white ml-auto mr-auto mt-auto text-center "}>
@@ -45,7 +45,7 @@ export default function IndexLanding() {
                     <Title className={"text-white text-[5vmax] font-medium"}>{webData?.landing_page.headline}</Title>
                     <Text className={"text-white text-[1.5vmax]"}>{webData?.landing_page.descriptive}</Text>
                 </span>
-                <Link href={""}>
+                <Link href={"#get-involved"}>
                     <Button w={200} h={50} rightSection={<FaArrowRight/>} radius={'md'} variant={'gradient'}>
                         Get involved
                     </Button>

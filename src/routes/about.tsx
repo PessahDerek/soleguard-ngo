@@ -13,12 +13,12 @@ export const Route = createFileRoute('/about')({
 function AboutComponent() {
     usePage()
     const title = useParallax({
-        speed: 20
+        speed: -20
     })
     const par1 = useParallax({speed: -10})
 
     return (
-        <div className="w-full space-y-5">
+        <div data-aos={"fade-up"} data-aos-duration={700} className="w-full space-y-5">
             {/*@ts-ignore*/}
             <div ref={title.ref} className={"flex m-auto p-5 gap-5 max-w-full w-3/4 flex-wrap justify-center"}>
                 <Title

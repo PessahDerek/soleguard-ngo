@@ -17,7 +17,7 @@ export default function Navbar() {
                     <Link href={""}>Blog</Link>
                 </div>
 
-                <Link href={""} className={"mt-auto mb-auto"}>
+                <Link href={"#get-involved"} className={"mt-auto mb-auto"}>
                     <div
                         className={"w-full bg-gradient-to-tr from-primary-400 to-secondary p-[1.5px] mt-auto mb-auto rounded-[10px]"}>
                         <Button rightSection={<FaArrowRight className={"text-secondary"}/>} variant={'filled'}

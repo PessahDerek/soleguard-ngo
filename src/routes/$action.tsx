@@ -3,6 +3,9 @@ import usePage from "../hooks/usePage";
 import {useMemo} from "react";
 import ContactUsForm from "../components/pieces/ContactUsForm";
 import DonateForm from "../components/pieces/DonateForm";
+import VolunteerForm from "../components/pieces/VolunteerForm";
+import PartnerForm from "../components/pieces/PartnerForm";
+import ShareForm from "../components/pieces/ShareForm";
 
 export const Route = createFileRoute('/$action')({
     component: RouteComponent,
@@ -12,12 +15,18 @@ function RouteComponent() {
     usePage()
     const params = useParams({from: "/$action"})
 
-    const action = useMemo(()=>{
-        switch (params.action){
+    const action = useMemo(() => {
+        switch (params.action) {
             case "contact":
-                return <ContactUsForm />
+                return <ContactUsForm/>
             case "donate":
                 return <DonateForm/>
+            case "volunteer":
+                return <VolunteerForm/>
+            case "share":
+                return <ShareForm/>
+            default:
+                return <PartnerForm/>
         }
     }, [params])
 

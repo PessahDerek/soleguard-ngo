@@ -44,7 +44,7 @@ export default function IndexGetInvolved() {
     ]
     const parallax = useParallax({speed: -25})
     return (
-        <div className={"w-full h-max min-h-[100vh] grid  "}>
+        <div id={"get-involved"} className={"w-full h-max min-h-[100vh] grid  "}>
             {/*@ts-ignore*/}
             <Image ref={parallax.ref} className={"w-full h-3/4 z-0 absolute cover-this top-0 brightness-75"}
                    src={"/pics/involved.jpg"}
