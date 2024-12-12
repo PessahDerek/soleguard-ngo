@@ -13,7 +13,7 @@ import '@mantine/core/styles.css';
 // import '@mantine/code-highlight/styles.css';
 // ...
 import "./main.css"
-import {createTheme, MantineProvider, MantineThemeProvider} from "@mantine/core";
+import {MantineProvider} from "@mantine/core";
 import myMantineTheme from "./libs/myMantineTheme";
 
 // Set up a Router instance
@@ -30,12 +30,14 @@ declare module '@tanstack/react-router' {
 }
 
 const rootElement = document.getElementById('app')!
+const theme = myMantineTheme();
 
+console.log(theme.luminanceThreshold, " * ", theme.autoContrast)
 
 if (!rootElement.innerHTML) {
     const root = ReactDOM.createRoot(rootElement)
     root.render(
-        <MantineProvider theme={myMantineTheme}>
+        <MantineProvider theme={theme}>
             <RouterProvider router={router}/>
         </MantineProvider>
     )

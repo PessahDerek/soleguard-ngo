@@ -1,9 +1,17 @@
 import {createTheme} from "@mantine/core";
 
 
-const myMantineTheme = createTheme({
-    primaryShade: 5,
+const myMantineTheme = () => createTheme({
+    luminanceThreshold: 0.7,
+    primaryShade: 4,
+    fontFamily: 'Poppins',
     primaryColor: 'primary',
+    defaultGradient: {from: 'primary', to: 'secondary', deg: 45},
+    components: {
+        Button: {
+            defaultProps: {variant: "filled"}
+        },
+    },
     colors: {
         'primary': [
             '#81D799',
