@@ -46,17 +46,18 @@ export default function IndexGetInvolved() {
         },
     ]
     return (
-        <div className={"w-full h-max min-h-[90vh] grid"}>
-            <Image className={"w-full h-[80vh] absolute top-0"} src={"/pics/involved.jpg"}
+        <div className={"w-full h-max min-h-[100vh] grid"}>
+            <Image className={"w-full h-3/4 absolute top-0 brightness-75"} src={"/pics/involved.jpg"}
                    alt={"People planting a tree"}/>
-            <div
-                className={"w-full h-1/2 absolute top-0 left-0 bg-gradient-to-b from-primary-400 to-transparent"}/>
-            <div className={"w-full h-max bottom-0 mt-auto"}>
-
-                <div className={"w-[95%] m-auto "} >
+            <div className={"w-full h-1/2 absolute top-0 left-0 bg-gradient-to-b from-primary-400 to-transparent"}/>
+            <div className={"w-full h-max bottom-0 mt-[20%] grid gap-4"}>
+                <span>
                     <Title className={"text-white text-[5vmax] text-center"}>Here is how you can help</Title>
-                    <Text className={"text-white text-center text-2xl"}>There are many ways to support Soleguard Alliance and make a
-                        difference</Text>
+                    <Text className={"text-white text-center text-2xl"}>
+                        There are many ways to support Soleguard Alliance and make a difference
+                    </Text>
+                </span>
+                <div className={"w-[90%] ml-auto mr-auto "}>
                     <div className={"w-full flex-grid flex-wrap gap-2"}>
                         {how.map((item, index) => (
                             <InvolvedCard involved={item} index={index} key={index}/>

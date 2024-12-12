@@ -32,3 +32,18 @@ a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
+footer {
+    h3 {
+        color: white;
+    }
+    p {
+        font-size: 12px !important;
+        @apply text-[12px];
+    }
+    a {
+        font-size: 12px !important;
+    }
+    label {
+        font-size: 12px !important;
+    }
+}
