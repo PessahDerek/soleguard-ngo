@@ -15,12 +15,12 @@ export default function AppFooter() {
                         <Title order={3}>Sitemap</Title>
                         <div className={"grid gap-4"}>
                             <Link href="/">Home</Link>
-                            <Link href="/">About us</Link>
-                            <Link href="/">Contact</Link>
-                            <Link href="/">Donate</Link>
-                            <Link href="/">Volunteer</Link>
-                            <Link href="/">Partner with us</Link>
-                            <Link href="/">Raise awareness</Link>
+                            <Link to="/about">About us</Link>
+                            <Link to={"/$action"} params={{action: "contact"}}>Contact</Link>
+                            <Link resetScroll={true} to={"/$action"} params={{action: "donate"}}>Donate</Link>
+                            <Link to={"/$action"} params={{action: "volunteer"}}>Volunteer</Link>
+                            <Link to={"/$action"} params={{action: "partner"}}>Partner with us</Link>
+                            <Link to={"/$action"} params={{action: "share"}}>Raise awareness</Link>
                         </div>
                     </div>
                     <div className={"flex-1 min-w-[300px] md:w-[100px] grid gap-20"}>
