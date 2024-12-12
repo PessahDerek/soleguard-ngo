@@ -3,6 +3,7 @@ import {AreaOfFocusObj, webData} from "../../libs/webData";
 import {useMemo} from "react";
 import {Link} from "@tanstack/react-router";
 import {FaArrowRight} from "react-icons/fa";
+import {useParallax} from "react-scroll-parallax";
 
 
 export function FocusCard({aof, index}: { aof: AreaOfFocusObj, index: number }) {
@@ -24,17 +25,22 @@ export function FocusCard({aof, index}: { aof: AreaOfFocusObj, index: number }) 
 }
 
 export default function IndexLanding() {
+    const parallax = useParallax({speed: -20})
+
     const areaOfFocus = webData.focus.map((aof, index) =>
         <FocusCard key={index} aof={aof} index={index}/>);
 
+
     return (
-        <div className={"w-full flex h-[calc(100vh-70px)]"}>
-            <Image
-                src={"/pics/ocean3.jpg"} alt={"landing"}
-                fit={'cover'} className={"w-full h-full object-center filter brightness-[60%] absolute top-0 left-0 "}
-                fetchPriority={"high"}/>
+        <div className={"w-full overflow-hidden flex h-[calc(100vh-70px)]"}>
+            {/*@ts-ignore*/}
+            <Image ref={parallax.ref}
+                   src={"/pics/ocean3.jpg"} alt={"landing"}
+                   fit={'cover'}
+                   className={"w-full h-full object-center filter brightness-[60%] absolute top-0 left-0 "}
+                   fetchPriority={"high"}/>
             <div
-                className={"w-[90%] grid overflow-hidden h-max min-h-[80%] gap-2  text-white ml-auto mr-auto mt-auto text-center "}>
+                className={"w-[90%] grid h-max min-h-[80%] gap-2  text-white ml-auto mr-auto mt-auto text-center "}>
                 <span className={"w-full m-auto"}>
                     <Title className={"text-white text-[5vmax] font-medium"}>{webData?.landing_page.headline}</Title>
                     <Text className={"text-white text-[1.5vmax]"}>{webData?.landing_page.descriptive}</Text>

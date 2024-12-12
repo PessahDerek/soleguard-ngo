@@ -12,9 +12,11 @@ import '@mantine/core/styles.css';
 // import '@mantine/dropzone/styles.css';
 // import '@mantine/code-highlight/styles.css';
 // ...
+import "aos/dist/aos.css"
 import "./main.css"
-import {MantineProvider} from "@mantine/core";
+import {MantineProvider} from "@mantine/core"
 import myMantineTheme from "./libs/myMantineTheme";
+import {ParallaxProvider} from "react-scroll-parallax";
 
 // Set up a Router instance
 const router = createRouter({
@@ -36,9 +38,12 @@ console.log(theme.luminanceThreshold, " * ", theme.autoContrast)
 
 if (!rootElement.innerHTML) {
     const root = ReactDOM.createRoot(rootElement)
+
     root.render(
         <MantineProvider theme={theme}>
-            <RouterProvider router={router}/>
+            <ParallaxProvider>
+                <RouterProvider router={router}/>
+            </ParallaxProvider>
         </MantineProvider>
     )
 }

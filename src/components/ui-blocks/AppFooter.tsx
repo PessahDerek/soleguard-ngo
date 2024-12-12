@@ -11,9 +11,9 @@ export default function AppFooter() {
                     <Link href="/">
                         <Image className={"flex-1 w-[100px] rounded-md"} src={"/pics/logo.jpeg"} alt={"Soleguard Alliance Logo"}/>
                     </Link>
-                    <div className={"flex-1 grid h-max max-w-[300px]"}>
+                    <div className={"flex-1 grid h-max min-w-[300px] md:w-[300px]"}>
                         <Title order={3}>Sitemap</Title>
-                        <div className={"grid"}>
+                        <div className={"grid gap-4"}>
                             <Link href="/">Home</Link>
                             <Link href="/">About us</Link>
                             <Link href="/">Contact</Link>
@@ -23,7 +23,7 @@ export default function AppFooter() {
                             <Link href="/">Raise awareness</Link>
                         </div>
                     </div>
-                    <div className={"flex-1 max-w-[300px] grid gap-20"}>
+                    <div className={"flex-1 min-w-[300px] md:w-[100px] grid gap-20"}>
                         <div>
                             <Title order={3}>Head office</Title>
                             <Text>P.O BOX 19194-00501 Nairobi - Utawala next to Shell petrol station</Text>

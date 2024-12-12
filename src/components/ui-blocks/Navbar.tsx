@@ -11,9 +11,9 @@ export default function Navbar() {
                 <HomeLogoLink/>
 
                 <div className={"hidden md:flex gap-10 h-max m-auto w-max"}>
-                    <Link href={""}>About</Link>
-                    <Link href={""}>Impact</Link>
-                    <Link href={""}>Contacts</Link>
+                    <Link href={"about"}>About</Link>
+                    <Link href={"#impact"}>Impact</Link>
+                    <Link to={"/$action"} params={{action: "contact"}}>Contact us</Link>
                     <Link href={""}>Blog</Link>
                 </div>
 

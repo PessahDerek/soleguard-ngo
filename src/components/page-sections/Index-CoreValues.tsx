@@ -1,13 +1,17 @@
 import {Image, Text, Title} from "@mantine/core";
 import {CoreValueObj, webData} from "../../libs/webData";
-import {useState} from "react";
+import React, {useState} from "react";
+import {useParallax} from "react-scroll-parallax";
 
+interface props {
+    coreValue: CoreValueObj;
+}
 
-function CoreValueCard({coreValue: {value, description, image}}: { coreValue: CoreValueObj }) {
+function CoreValueCard({coreValue: {value, description, image}, ...rest}: props) {
     const [active, setActive] = useState(false);
 
     return (
-        <div onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)}
+        <div {...rest} onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)}
              className={"min-w-[300px] min-h-[35vh] hover:scale-[101%] flex-1 gap-2"}>
             <div
                 className={`w-[95%] h-[90%] transition-all ${active ? "bg-secondary-900 shadow-2xl" : ""} absolute right-0 bottom-0 ml-auto mt-auto  bg-primary`}>
@@ -27,8 +31,10 @@ function CoreValueCard({coreValue: {value, description, image}}: { coreValue: Co
 
 
 export default function IndexCoreValues() {
+    // const parallaxes = webData.coreValues.map(() => useParallax({speed: -10}))
     const coreValues = webData.coreValues.map((coreValue, index) =>
-        <CoreValueCard coreValue={coreValue} key={index}/>)
+        <CoreValueCard coreValue={coreValue} key={index}/>
+    )
 
     return (
         <div className={"w-[90%] h-max m-auto pb-10"}>

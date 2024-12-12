@@ -32,13 +32,21 @@ export interface PartnershipObj {
     partner: string;
     description: string;
 }
+
 export interface GetInvolvedObj {
     how: string;
     description: string;
     image: string;
-    action: () => void;
+    action: string;
     actionText: string;
     icon: IconType;
+}
+
+export interface ManagementObj {
+    name: string;
+    comment?: string;
+    image: string;
+    title: string;
 }
 
 export interface AreaOfFocusObj {
@@ -50,7 +58,7 @@ export interface AreaOfFocusObj {
 }
 
 export interface WebDataObj {
-    [key: string]: string | LandingPageObj | AreaOfFocusObj[] | VisionAndMissionObj[] | CoreValueObj[] | ImpactObj[] | PartnershipObj[]
+    [key: string]: string | ManagementObj[] | LandingPageObj | AreaOfFocusObj[] | VisionAndMissionObj[] | CoreValueObj[] | ImpactObj[] | PartnershipObj[]
 
     "org_name": string,
     "tagline": string,
@@ -59,7 +67,8 @@ export interface WebDataObj {
     "visionAndMission": VisionAndMissionObj[],
     "coreValues": CoreValueObj[]
     "impact": ImpactObj[],
-    "partnerships": PartnershipObj[]
+    "partnerships": PartnershipObj[],
+    "management": ManagementObj[],
 }
 
 export const webData: WebDataObj = {
@@ -168,6 +177,38 @@ export const webData: WebDataObj = {
         {
             partner: "Private sector",
             description: " Collaborating with global partners to leverage best practices and access funding opportunities."
+        },
+    ],
+    "management": [
+        {
+            name: "Kevin Kirimi",
+            title: "Managing director",
+            comment: "Soleguard Alliance is a Kenyan-based non-governmental organization welfare, fostering environmental",
+            image: ""
+        },
+        {
+            name: "David Kavunja",
+            title: "Program manager",
+            comment: "Soleguard Alliance is a Kenyan-based non-governmental organization welfare, fostering environmental",
+            image: "",
+        },
+        {
+            name: "Daniel Okumu",
+            title: "Program manager",
+            comment: "Soleguard Alliance is a Kenyan-based non-governmental organization welfare, fostering environmental",
+            image: "",
+        },
+        {
+            name: "Irungu Pamela",
+            title: "Program manager",
+            comment: "Soleguard Alliance is a Kenyan-based non-governmental organization welfare, fostering environmental",
+            image: "",
+        },
+        {
+            name: "Brian Nyongesa",
+            title: "Communication",
+            comment: "Soleguard Alliance is a Kenyan-based non-governmental organization welfare, fostering environmental",
+            image: "",
         },
     ]
 }
