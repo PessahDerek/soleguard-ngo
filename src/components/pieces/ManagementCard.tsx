@@ -20,7 +20,7 @@ export default function ManagementCard({manager}: props) {
 
     return (
         <Card ref={ref} /**data-aos={"slide-up"}*/ data-aos-duration={500}
-              className={"w-full min-w-[300px] h-full cursor-pointer hover:-translate-y-1 hover:shadow-2xl transition-all m-auto flex-1"}>
+              className={"w-full min-w-[300px] mt-0 h-full cursor-pointer hover:-translate-y-1 hover:shadow-2xl transition-all m-auto flex-1"}>
             <Card.Section>
                 <Image src={image} alt={manager.name} className={"w-[20vh] h-[20vh] m-auto rounded-full object-cover"}/>
             </Card.Section>

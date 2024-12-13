@@ -1,7 +1,6 @@
 import {Image, Text, Title} from "@mantine/core";
 import {CoreValueObj, webData} from "../../libs/webData";
 import React, {useState} from "react";
-import {useParallax} from "react-scroll-parallax";
 
 interface props {
     coreValue: CoreValueObj;
@@ -14,7 +13,7 @@ function CoreValueCard({coreValue: {value, description, image}, ...rest}: props)
         <div {...rest} onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)}
              className={"min-w-[300px] min-h-[35vh] hover:scale-[101%] flex-1 gap-2"}>
             <div
-                className={`w-[95%] h-[90%] transition-all ${active ? "bg-secondary-900 shadow-2xl" : ""} absolute right-0 bottom-0 ml-auto mt-auto  bg-primary`}>
+                className={`w-[95%] h-full md:h-[90%] transition-all ${active ? "bg-secondary-900 shadow-2xl" : ""} absolute right-0 bottom-0 ml-auto mt-auto  bg-primary`}>
             </div>
 
             <div className={"flex gap-2"}>
@@ -31,16 +30,16 @@ function CoreValueCard({coreValue: {value, description, image}, ...rest}: props)
 
 
 export default function IndexCoreValues() {
-    // const parallaxes = webData.coreValues.map(() => useParallax({speed: -10}))
-    const coreValues = webData.coreValues.map((coreValue, index) =>
-        <CoreValueCard coreValue={coreValue} key={index}/>
-    )
 
     return (
         <div className={"w-[90%] h-max m-auto pb-10"}>
             <Title className={"text-[3vmax] text-primary text-center"}>Core values</Title>
-            <div className={"w-full inline-flex justify-evenly items-stretch flex-wrap flex-grow gap-2"}>
-                {...coreValues}
+            <div className={"w-full grid justify-evenly items-stretch flex-wrap flex-grow gap-2"}>
+                {
+                    webData.coreValues.map((coreValue, index) =>
+                        <CoreValueCard coreValue={coreValue} key={index}/>
+                    )
+                }
             </div>
         </div>
     )

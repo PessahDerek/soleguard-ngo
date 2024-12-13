@@ -57,7 +57,7 @@ function AboutComponent() {
             <Space h={20}/>
             <div className={"grid gap-5"}>
                 <Title className={"text-center text-primary"}>Meet the team behind</Title>
-                <div className={"w-[90%] m-auto flex-grid gap-4"}>
+                <div className={"w-[90%] m-auto flex flex-wrap gap-4"}>
                     {webData.management.map((manager, index) =>
                         <ManagementCard manager={manager} key={index}/>)}
                 </div>

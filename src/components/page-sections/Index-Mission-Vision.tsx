@@ -15,7 +15,7 @@ function MissionAndVisionCard({visionMission: {title, statement}}: { visionMissi
 export default function IndexMissionVision() {
 
     return (
-        <div className={"w-[95%] h-full p-10 m-auto flex flex-wrap gap-5"}>
+        <div className={"w-[95%] h-full p-10 m-auto flex flex-wrap justify-center gap-5"}>
             {webData.visionAndMission.map((visMis, index) =>
                 <MissionAndVisionCard visionMission={visMis} key={index}/>)}
         </div>

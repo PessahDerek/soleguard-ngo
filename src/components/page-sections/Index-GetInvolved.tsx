@@ -44,13 +44,13 @@ export default function IndexGetInvolved() {
     ]
     const parallax = useParallax({speed: -25})
     return (
-        <div id={"get-involved"} className={"w-full h-max min-h-[100vh] grid  "}>
+        <div id={"get-involved"} className={"w-full h-max min-h-[100vh] grid justify-center "}>
             {/*@ts-ignore*/}
             <Image ref={parallax.ref} className={"w-full h-3/4 z-0 absolute cover-this top-0 brightness-75"}
                    src={"/pics/involved.jpg"}
                    alt={"People planting a tree"}/>
             <div className={"w-full h-1/2 absolute top-0 left-0 bg-gradient-to-b from-primary-400 to-transparent"}/>
-            <div className={"w-full h-max bottom-0 mt-[20%] grid gap-4"}>
+            <div className={"w-full h-max bottom-0 mt-[20%] grid justify-center gap-4"}>
                 <span>
                     <Title className={"text-white text-[5vmax] text-center"}>Here is how you can help</Title>
                     <Text className={"text-white text-center text-2xl"}>
@@ -58,7 +58,7 @@ export default function IndexGetInvolved() {
                     </Text>
                 </span>
                 <div className={"w-[90%] ml-auto mr-auto "}>
-                    <div className={"w-full flex-grid flex-wrap gap-2"}>
+                    <div className={"w-full flex flex-wrap justify-center gap-2"}>
                         {how.map((item, index) => (
                             <InvolvedCard data-scroll involved={item} index={index} key={index}/>
                         ))}
