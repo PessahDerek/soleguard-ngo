@@ -17,6 +17,7 @@ import "./main.css"
 import {MantineProvider} from "@mantine/core"
 import myMantineTheme from "./libs/myMantineTheme";
 import {ParallaxProvider} from "react-scroll-parallax";
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 
 // Set up a Router instance
 const router = createRouter({
@@ -33,8 +34,7 @@ declare module '@tanstack/react-router' {
 
 const rootElement = document.getElementById('app')!
 const theme = myMantineTheme();
-
-console.log(theme.luminanceThreshold, " * ", theme.autoContrast)
+const queryClient = new QueryClient({})
 
 if (!rootElement.innerHTML) {
     const root = ReactDOM.createRoot(rootElement)
@@ -42,7 +42,9 @@ if (!rootElement.innerHTML) {
     root.render(
         <MantineProvider theme={theme}>
             <ParallaxProvider>
-                <RouterProvider router={router}/>
+                <QueryClientProvider client={queryClient}>
+                    <RouterProvider router={router}/>
+                </QueryClientProvider>
             </ParallaxProvider>
         </MantineProvider>
     )

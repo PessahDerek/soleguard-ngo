@@ -14,7 +14,7 @@ export default function Navbar() {
                     <Link href={"about"}>About</Link>
                     <Link href={"#impact"}>Impact</Link>
                     <Link to={"/$action"} params={{action: "contact"}}>Contact us</Link>
-                    <Link href={""}>Blog</Link>
+                    <Link to={"/blog"}>Blog</Link>
                 </div>
 
                 <Link href={"#get-involved"} className={"mt-auto mb-auto"}>

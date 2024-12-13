@@ -1,15 +1,29 @@
 import {Link} from "@tanstack/react-router";
 import {Button, Image, Text, TextInput, Title} from "@mantine/core";
 import {MdEmail} from "react-icons/md";
+import React, {useRef, useState} from "react";
+import useSendEmail from "../../hooks/useSendEmail";
 
 export default function AppFooter() {
+    const newsLetter = useRef<HTMLFormElement>(null)
+    const [loading, setLoading] = useState<boolean>(false)
+    const {sendEmail} = useSendEmail()
+
+    const joinNewsletter = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        setLoading(true)
+        sendEmail(newsLetter, 'template_7m0i4rv')
+            .then(() => newsLetter.current?.reset())
+            .finally(() => setLoading(false))
+    }
 
     return (
         <footer className={"w-full  min-h-[50vh] p-20  mt-20 text-white !font-light  bg-primary-600 flex"}>
             <div className={"w-[80%] grid gap-10 m-auto"}>
                 <div className={"flex flex-wrap gap-10 justify-between"}>
                     <Link href="/">
-                        <Image className={"flex-1 w-[100px] rounded-md"} src={"/pics/logo.jpeg"} alt={"Soleguard Alliance Logo"}/>
+                        <Image className={"flex-1 w-[100px] rounded-md"} src={"/pics/logo.jpeg"}
+                               alt={"Soleguard Alliance Logo"}/>
                     </Link>
                     <div className={"flex-1 grid h-max min-w-[300px] md:w-[300px]"}>
                         <Title order={3}>Sitemap</Title>
@@ -28,10 +42,10 @@ export default function AppFooter() {
                             <Title order={3}>Head office</Title>
                             <Text>P.O BOX 19194-00501 Nairobi - Utawala next to Shell petrol station</Text>
                         </div>
-                        <form className={"grid gap-2"}>
+                        <form ref={newsLetter} onSubmit={joinNewsletter} className={"grid gap-2"}>
                             <Title order={3}>News letter</Title>
                             <TextInput name={"email"} label={"Enter your email"} rightSection={<MdEmail/>}/>
-                            <Button>Submit</Button>
+                            <Button loading={loading} disabled={loading} type={'submit'}>Submit</Button>
                         </form>
                     </div>
                 </div>

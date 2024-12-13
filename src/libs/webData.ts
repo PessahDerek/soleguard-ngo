@@ -181,34 +181,36 @@ export const webData: WebDataObj = {
     ],
     "management": [
         {
-            name: "Kevin Kirimi",
-            title: "Managing director",
-            comment: "Soleguard Alliance is a Kenyan-based non-governmental organization welfare, fostering environmental",
-            image: ""
+            name: "Kelvin Kirimi",
+            title: "Finance & Strategy Manager",
+            comment: "Kevin is an accomplished professional with a robust background in project management, environmental conservation, carbon abatement, circular economy, waste management, and sustainability initiatives. With expertise spanning Sustainable Development Goals (SDGs), nature-based livelihood programs, and climate resilience, he has demonstrated a strong commitment to impactful work across sectors.\n" +
+                "Known for a results-driven approach, he brings excellent analytical, interpersonal, and communication skills, enabling effective collaboration and problem-solving in complex projects. With integrity and dedication to advancing Soleguard Alliance’s mission, the Kevin is deeply committed to contributing to the organization's efforts in jigger eradication, animal welfare, the blue economy, and environmental conservation in Kenya.",
+            image: "/profiles/kelvin.jpeg"
         },
+        // {
+        //     name: "David Kavunja",
+        //     title: "Program manager",
+        //     comment: "Soleguard Alliance is a Kenyan-based non-governmental organization welfare, fostering environmental",
+        //     image: "",
+        // },
         {
-            name: "David Kavunja",
-            title: "Program manager",
-            comment: "Soleguard Alliance is a Kenyan-based non-governmental organization welfare, fostering environmental",
-            image: "",
+            name: "Irungu Pamela",
+            title: "Communication & Digital Strategy Manager",
+            comment: "Wanjiru Irungu is a professional\n" +
+                "passionate advocate for sustainable agriculture ,food safety and community development with over 7 years of experience in promoting eco-friendly farming practices, resource-efficient technologies, and food systems that prioritize environmental stewardship, economic viability, and social equity. Possessing a robust academic foundation in agricultural science and environmental studies, along with hands-on expertise in regenerative farming techniques, agroecology, and climate-smart agriculture.",
+            image: "/profiles/wanjiru.jpeg",
         },
         {
             name: "Daniel Okumu",
-            title: "Program manager",
-            comment: "Soleguard Alliance is a Kenyan-based non-governmental organization welfare, fostering environmental",
-            image: "",
+            title: "Program & Research Manager",
+            comment: "Daniel Darren Okumu  is a knowledgeable and committed leader with over 10 years of diverse experience in teamwork, project management, and strategic planning. Known for his clear, logical approach to community problem-solving, he is  driven by a strong commitment to see tasks through to successful completion. With a confident presence and a natural talent for mentorship, Okumu encourages creativity and collaboration in multidisciplinary teams. His focus on holistic solutions to challenges impacting communities and dedication to lifelong learning make  him a valuable asset in advancing Soleguard Alliance’s mission of jigger eradication, animal welfare, blue economy promotion, and environmental conservation in Kenya.",
+            image: "/profiles/danielokumu.jpeg",
         },
-        {
-            name: "Irungu Pamela",
-            title: "Program manager",
-            comment: "Soleguard Alliance is a Kenyan-based non-governmental organization welfare, fostering environmental",
-            image: "",
-        },
-        {
-            name: "Brian Nyongesa",
-            title: "Communication",
-            comment: "Soleguard Alliance is a Kenyan-based non-governmental organization welfare, fostering environmental",
-            image: "",
-        },
+        // {
+        //     name: "Brian Nyongesa",
+        //     title: "Communication",
+        //     comment: "Soleguard Alliance is a Kenyan-based non-governmental organization welfare, fostering environmental",
+        //     image: "",
+        // },
     ]
 }
