@@ -13,7 +13,7 @@ function CoreValueCard({coreValue: {value, description, image}, ...rest}: props)
         <div {...rest} onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)}
              className={"min-w-[300px] min-h-[35vh] hover:scale-[101%] flex-1 gap-2"}>
             <div
-                className={`w-[95%] h-full md:h-[90%] transition-all ${active ? "bg-secondary-900 shadow-2xl" : ""} absolute right-0 bottom-0 ml-auto mt-auto  bg-primary`}>
+                className={`w-[95%] h-[95%] transition-all ${active ? "bg-secondary-900 shadow-2xl" : ""} absolute right-0 bottom-0 ml-auto mt-auto  bg-primary`}>
             </div>
 
             <div className={"flex gap-2"}>
@@ -34,7 +34,7 @@ export default function IndexCoreValues() {
     return (
         <div className={"w-[90%] h-max m-auto pb-10"}>
             <Title className={"text-[3vmax] text-primary text-center"}>Core values</Title>
-            <div className={"w-full grid justify-evenly items-stretch flex-wrap flex-grow gap-2"}>
+            <div className={"w-full flex flex-wrap gap-2"}>
                 {
                     webData.coreValues.map((coreValue, index) =>
                         <CoreValueCard coreValue={coreValue} key={index}/>
