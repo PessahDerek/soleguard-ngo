@@ -2,6 +2,7 @@ import HomeLogoLink from "../pieces/HomeLogoLink";
 import {Link} from "@tanstack/react-router";
 import {Button} from "@mantine/core";
 import {FaArrowRight} from "react-icons/fa";
+import NavDropDownMobile from "./NavDropDownMobile";
 
 
 export default function Navbar() {
@@ -17,7 +18,7 @@ export default function Navbar() {
                     <Link to={"/blog"}>Blog</Link>
                 </div>
 
-                <Link href={"#get-involved"} className={"mt-auto mb-auto"}>
+                <Link href={"#get-involved"} className={"hidden md:block mt-auto mb-auto"}>
                     <div
                         className={"w-full bg-gradient-to-tr from-primary-400 to-secondary p-[1.5px] mt-auto mb-auto rounded-[10px]"}>
                         <Button rightSection={<FaArrowRight className={"text-secondary"}/>} variant={'filled'}
@@ -26,6 +27,7 @@ export default function Navbar() {
                         </Button>
                     </div>
                 </Link>
+                <NavDropDownMobile />
             </div>
         </nav>
     )
