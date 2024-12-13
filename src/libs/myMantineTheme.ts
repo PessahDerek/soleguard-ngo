@@ -11,6 +11,11 @@ const myMantineTheme = () => createTheme({
         Button: {
             defaultProps: {variant: "filled"}
         },
+        Text: {
+            defaultProps: {
+
+            }
+        }
     },
     colors: {
         'primary': [

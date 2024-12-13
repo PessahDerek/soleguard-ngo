@@ -33,7 +33,7 @@ export default function IndexCoreValues() {
 
     return (
         <div className={"w-[90%] h-max m-auto pb-10"}>
-            <Title className={"text-[3vmax] text-primary text-center"}>Core values</Title>
+            <Title className={"text-primary text-center"}>Core values</Title>
             <div className={"w-full flex flex-wrap gap-2"}>
                 {
                     webData.coreValues.map((coreValue, index) =>

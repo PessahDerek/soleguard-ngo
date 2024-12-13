@@ -41,7 +41,7 @@ const BlogIndexRoute = BlogIndexImport.update({
   id: '/blog/',
   path: '/blog/',
   getParentRoute: () => rootRoute,
-} as any)
+} as any).lazy(() => import('./routes/blog/index.lazy').then((d) => d.Route))
 
 const BlogBlognameRoute = BlogBlognameImport.update({
   id: '/blog/$blog_name',

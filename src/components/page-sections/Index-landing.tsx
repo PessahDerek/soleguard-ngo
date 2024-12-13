@@ -43,7 +43,7 @@ export default function IndexLanding() {
                 className={"w-[90%] grid h-max min-h-[80%] gap-2  text-white ml-auto mr-auto mt-auto text-center "}>
                 <span className={"w-full m-auto"}>
                     <Title className={"text-white text-[5vmax] font-medium"}>{webData?.landing_page.headline}</Title>
-                    <Text className={"text-white text-[1.5vmax]"}>{webData?.landing_page.descriptive}</Text>
+                    <Text size={'md'} className={"text-white"}>{webData?.landing_page.descriptive}</Text>
                 </span>
                 <Link href={"#get-involved"}>
                     <Button w={200} h={50} rightSection={<FaArrowRight/>} radius={'md'} variant={'gradient'}>

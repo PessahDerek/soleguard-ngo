@@ -16,7 +16,7 @@ function HomeComponent() {
     usePage()
 
     return (
-        <div data-aos={'fade-up'} data-aos-duration={700} className="w-full h-max">
+        <div data-aos={'fade-up'} data-aos-duration={700} className="w-full h-max m-auto">
             <IndexLanding/>
             <IndexMissionVision/>
             <IndexCoreValues/>

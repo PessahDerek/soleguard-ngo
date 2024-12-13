@@ -7,7 +7,7 @@ function ImpactCard({impact}: { impact: ImpactObj }) {
     return (
         <Card data-aos={"fade-up"} className={"flex-1 min-w-[300px] grid align-middle content-center items-center"}>
             {impact.numbers &&
-                <Text className={"text-[4vmax] text-primary font-medium"}>{impact.numbers.toLocaleString()}</Text>
+                <Text className={"text-[32pt] text-primary font-medium"}>{impact.numbers.toLocaleString()}</Text>
             }
             <Text>{impact.description}</Text>
         </Card>

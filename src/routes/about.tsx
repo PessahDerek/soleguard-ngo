@@ -13,7 +13,7 @@ export const Route = createFileRoute('/about')({
 function AboutComponent() {
     usePage()
     const title = useParallax({
-        speed: -20
+        speed: 20
     })
     const par1 = useParallax({speed: -10})
 
