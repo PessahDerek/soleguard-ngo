@@ -46,8 +46,8 @@ export default function IndexGetInvolved() {
     return (
         <div id={"get-involved"} className={"w-full h-max min-h-[100vh] grid justify-center "}>
             {/*@ts-ignore*/}
-            <Image ref={parallax.ref} className={"w-full h-3/4 z-0 absolute cover-this top-0 brightness-75"}
-                   src={"/pics/involved.jpg"}
+            <Image ref={parallax.ref} className={"w-full h-[105%] object-center z-0 absolute cover-this top-0 brightness-75"}
+                   src={"/pics/animal-welfare.jpg"}
                    alt={"People planting a tree"}/>
             <div className={"w-full h-1/2 absolute top-0 left-0 bg-gradient-to-b from-primary-400 to-transparent"}/>
             <div className={"w-full h-max bottom-0 mt-[20%] grid justify-center gap-4"}>

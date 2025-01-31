@@ -76,27 +76,28 @@ export const webData: WebDataObj = {
     "tagline": "",
     "landing_page": {
         headline: "Committed to empowering communities",
-        descriptive: "Transforming lives through health, animal welfare, environmental conservation, and sustainable blue economy initiatives."
+        // descriptive: "Transforming lives through health, animal welfare, environmental conservation, and sustainable blue economy initiatives."
+        descriptive: "We are committed to creating a healthier, more compassionate world by addressing critical health challenges, ensuring the ethical treatment of animals, and fostering a harmonious coexistence between humans and animals for a sustainable future."
     },
     "focus": [
         {
-            "area": "Animal health",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, turpis vel tincidunt tincidunt, libero massa tincidunt sapien, sed tincidunt sapien sapien eu nisi.",
-            "image": "animal.svg"
+            "area": "Animal welfare",
+            "description": "Advocating for and promoting the humane treatment of animals.",
+            "image": "chicken.svg"
         },
-        {
-            "area": "Environmental conservation",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, turpis vel tincidunt tincidunt, libero massa tincidunt sapien, sed tincidunt sapien sapien eu nisi.",
-            "image": "environment.svg"
-        },
-        {
-            "area": "Blue economy",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, turpis vel tincidunt tincidunt, libero massa tincidunt sapien, sed tincidunt sapien sapien eu nisi.",
-            "image": "blue-economy.svg"
-        },
+        // {
+        //     "area": "Environmental conservation",
+        //     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, turpis vel tincidunt tincidunt, libero massa tincidunt sapien, sed tincidunt sapien sapien eu nisi.",
+        //     "image": "environment.svg"
+        // },
+        // {
+        //     "area": "Blue economy",
+        //     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, turpis vel tincidunt tincidunt, libero massa tincidunt sapien, sed tincidunt sapien sapien eu nisi.",
+        //     "image": "blue-economy.svg"
+        // },
         {
             "area": "Jiggers eradication",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, turpis vel tincidunt tincidunt, libero massa tincidunt sapien, sed tincidunt sapien sapien eu nisi.",
+            "description": "Combating the debilitating effects of jiggers and promoting public health",
             "image": "jiggers.svg"
         },
     ],

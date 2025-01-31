@@ -8,6 +8,8 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
+import { createFileRoute } from '@tanstack/react-router'
+
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
@@ -17,7 +19,17 @@ import { Route as IndexImport } from './routes/index'
 import { Route as BlogIndexImport } from './routes/blog/index'
 import { Route as BlogBlognameImport } from './routes/blog/$blog_name'
 
+// Create Virtual Routes
+
+const ShowcaseLazyImport = createFileRoute('/showcase')()
+
 // Create/Update Routes
+
+const ShowcaseLazyRoute = ShowcaseLazyImport.update({
+  id: '/showcase',
+  path: '/showcase',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./routes/showcase.lazy').then((d) => d.Route))
 
 const AboutRoute = AboutImport.update({
   id: '/about',
@@ -74,6 +86,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutImport
       parentRoute: typeof rootRoute
     }
+    '/showcase': {
+      id: '/showcase'
+      path: '/showcase'
+      fullPath: '/showcase'
+      preLoaderRoute: typeof ShowcaseLazyImport
+      parentRoute: typeof rootRoute
+    }
     '/blog/$blog_name': {
       id: '/blog/$blog_name'
       path: '/blog/$blog_name'
@@ -97,6 +116,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$action': typeof ActionRoute
   '/about': typeof AboutRoute
+  '/showcase': typeof ShowcaseLazyRoute
   '/blog/$blog_name': typeof BlogBlognameRoute
   '/blog': typeof BlogIndexRoute
 }
@@ -105,6 +125,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$action': typeof ActionRoute
   '/about': typeof AboutRoute
+  '/showcase': typeof ShowcaseLazyRoute
   '/blog/$blog_name': typeof BlogBlognameRoute
   '/blog': typeof BlogIndexRoute
 }
@@ -114,16 +135,30 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/$action': typeof ActionRoute
   '/about': typeof AboutRoute
+  '/showcase': typeof ShowcaseLazyRoute
   '/blog/$blog_name': typeof BlogBlognameRoute
   '/blog/': typeof BlogIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$action' | '/about' | '/blog/$blog_name' | '/blog'
+  fullPaths:
+    | '/'
+    | '/$action'
+    | '/about'
+    | '/showcase'
+    | '/blog/$blog_name'
+    | '/blog'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$action' | '/about' | '/blog/$blog_name' | '/blog'
-  id: '__root__' | '/' | '/$action' | '/about' | '/blog/$blog_name' | '/blog/'
+  to: '/' | '/$action' | '/about' | '/showcase' | '/blog/$blog_name' | '/blog'
+  id:
+    | '__root__'
+    | '/'
+    | '/$action'
+    | '/about'
+    | '/showcase'
+    | '/blog/$blog_name'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 
@@ -131,6 +166,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ActionRoute: typeof ActionRoute
   AboutRoute: typeof AboutRoute
+  ShowcaseLazyRoute: typeof ShowcaseLazyRoute
   BlogBlognameRoute: typeof BlogBlognameRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
@@ -139,6 +175,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ActionRoute: ActionRoute,
   AboutRoute: AboutRoute,
+  ShowcaseLazyRoute: ShowcaseLazyRoute,
   BlogBlognameRoute: BlogBlognameRoute,
   BlogIndexRoute: BlogIndexRoute,
 }
@@ -156,6 +193,7 @@ export const routeTree = rootRoute
         "/",
         "/$action",
         "/about",
+        "/showcase",
         "/blog/$blog_name",
         "/blog/"
       ]
@@ -168,6 +206,9 @@ export const routeTree = rootRoute
     },
     "/about": {
       "filePath": "about.tsx"
+    },
+    "/showcase": {
+      "filePath": "showcase.lazy.tsx"
     },
     "/blog/$blog_name": {
       "filePath": "blog/$blog_name.tsx"

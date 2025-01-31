@@ -15,10 +15,10 @@ export function FocusCard({aof, index}: { aof: AreaOfFocusObj, index: number }) 
     }
     const color = useMemo(() => {
         return colors[index]
-    }, [colors])
+    }, [colors, index])
     return (
-        <div className={`w-full max-w-[150px] min-h-[15vh] p-2 grid align-middle ${color[0]}`}>
-            <Image className={"w-full h-[10vmin] object-contain m-auto"} src={`/pics/${aof.image}`} alt={aof.name}/>
+        <div className={`w-full md:max-w-[250px] min-h-[15vh] p-2 grid align-middle ${color[0]}`}>
+            <Image style={{color: "white"}} className={"w-full h-[10vmin] text-white object-contain m-auto filter brightness-0 invert-[1]"} src={`/pics/${aof.image}`} alt={aof.name}/>
             <Text className={`${color[1]}`}>{aof.area}</Text>
         </div>
     )
@@ -35,7 +35,7 @@ export default function IndexLanding() {
         <div className={"w-full overflow-hidden flex h-[calc(100vh-70px)]"}>
             {/*@ts-ignore*/}
             <Image ref={parallax.ref}
-                   src={"/pics/ocean3.jpg"} alt={"landing"}
+                   src={"/pics/landing2.jpg"} alt={"landing"}
                    fit={'cover'}
                    className={"w-full h-[110%] object-center filter brightness-[60%] absolute top-0 left-0 "}
                    fetchPriority={"high"}/>
@@ -45,13 +45,13 @@ export default function IndexLanding() {
                     <Title className={"text-white text-[5vmax] font-medium"}>{webData?.landing_page.headline}</Title>
                     <Text size={'md'} className={"text-white"}>{webData?.landing_page.descriptive}</Text>
                 </span>
-                <Link href={"#get-involved"}>
+                <Link to={"/"} href={"#get-involved"}>
                     <Button w={200} h={50} rightSection={<FaArrowRight/>} radius={'md'} variant={'gradient'}>
                         Get involved
                     </Button>
                 </Link>
                 <div
-                    className={"min-w-1/2 w-max h-max mt-auto ml-auto mr-auto bg-black grid grid-cols-2 md:grid-cols-4"}>
+                    className={"min-w-1/2 md:w-max h-max mt-auto ml-auto mr-auto bg-black grid grid-cols-2"}>
                     {...areaOfFocus}
                 </div>
             </div>

@@ -14,19 +14,24 @@ export default function NavDropDownMobile() {
                     </Button>
                 </Menu.Target>
                 <Menu.Dropdown>
-                    <Link href={"/"}>
+                    <Link to={"/"} href={"/"}>
                         <Menu.Item className={"w-full h-[50px]"}>
                             Home
                         </Menu.Item>
                     </Link>
-                    <Link href={"about"}>
+                    <Link to={"/about"} href={"about"}>
                         <Menu.Item className={"w-full h-[50px]"}>
                             About
                         </Menu.Item>
                     </Link>
-                    <Link href={"#impact"}>
+                    <Link to={"/"} href={"#impact"}  hashScrollIntoView={{behavior: "smooth", block: "nearest"}}>
                         <Menu.Item className={"w-full h-[50px]"}>
                             Impact
+                        </Menu.Item>
+                    </Link>
+                    <Link to={"/showcase"} >
+                        <Menu.Item className={"w-full h-[50px]"}>
+                            Showcase
                         </Menu.Item>
                     </Link>
                     <Link to={"/$action"} params={{action: "contact"}}>

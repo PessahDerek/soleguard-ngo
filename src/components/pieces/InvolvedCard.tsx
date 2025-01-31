@@ -27,7 +27,7 @@ export default function InvolvedCard({involved, index}: props) {
     return (
         // @ts-ignore
         <Card data-aos={"slide-up"} data-aos-duration={1500}
-              className={"w-full flex-1 h-full cursor-pointer hover:shadow-2xl transition-all md:h-max min-w-min gap-2"}
+              className={"w-full flex-1 md:mt-auto h-full cursor-pointer hover:shadow-2xl transition-all md:h-max min-w-min gap-2"}
               style={{marginTop: window.innerWidth >= 768 ? `${index * 50}px` : undefined}}>
             <Card.Section>
                 <Image className={"w-full h-[20vh] object-center"} src={involved.image} alt={involved.how}/>
